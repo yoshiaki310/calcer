@@ -1,2 +1,2 @@
 general:
-  build_dir: calcer
+  build_dir: ./
