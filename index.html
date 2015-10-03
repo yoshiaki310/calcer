@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>けいさんもんだいをずっとだすマシーン</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.12.15/vue.min.js"></script>
+  <style>
+    body {
+      font-size: 24px;
+    }
+    
+    span.done {
+      visibility: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="calc">
+    <ul>
+      <li v-repeat="q" v-on="click: onClick">{{question}} = <span class="{{!done ? 'done' : ''}}">{{answer}}</span></li>
+    </ul>
+  </div>
+
+  <script src="./base.js"></script>
+
+</body>
+
+</html>
