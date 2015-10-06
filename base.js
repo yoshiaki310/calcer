@@ -1,21 +1,22 @@
 
 var calc = new Vue({
   el: '#calc',
+  template: '<li v-repeat="q">{{question}} = <input type="text" v-model="input" lazy number><input type="submit" v-on="click: onClick"></li>',
+  replace: true,
   data: {
-    q: [{ question: '1 + 2', answer: '3', done: false }]
+    q: [{ question: '1 + 2', answer: '3' }]
   },
   methods: {
     onClick: function () {
-      if (this.q[0].done === false) {
-        this.q[0].done = true;
-      } else {
+      console.log(this.q[0].input + '===' +  this.q[0].answer);
+      if ( this.q[0].input == this.q[0].answer ) {
         var qlist = [];
         var ans = 0;
         for (var i = 0; i < getRandomInt(2, 5); i++) {
           qlist[i] = getRandomInt(1, 10);
           ans += qlist[i];
         }
-        this.q.unshift({ question: qlist.join(" + "), answer: ans, done: false });
+        this.q.unshift({ question: qlist.join(" + "), answer: ans });
       }
     }
   }
