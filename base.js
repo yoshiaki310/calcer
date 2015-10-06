@@ -8,7 +8,6 @@ var calc = new Vue({
   },
   methods: {
     onClick: function () {
-      console.log(this.q[0].input + '===' +  this.q[0].answer);
       if ( this.q[0].input == this.q[0].answer ) {
         var qlist = [];
         var ans = 0;
