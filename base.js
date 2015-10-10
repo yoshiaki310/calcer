@@ -1,7 +1,7 @@
 
 var calc = new Vue({
   el: '#calc',
-  template: '<li v-repeat="q">{{question}} = <input type="text" v-model="input" lazy number><input type="submit" v-on="click: onClick"> {{judgement}}</li>',
+  template: '<li v-repeat="q">{{question}} = <input type="number" v-model="input" lazy number><input type="submit" v-on="click: onClick"> {{judgement}}</li>',
   replace: true,
   data: {
     q: [{ question: '1 + 2', answer: '3' , judgement: '' }]
